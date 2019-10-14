@@ -1,13 +1,9 @@
 const fetch = require("node-fetch");
-const http = require("https");
-const fs = require("fs");
+const dl = require("download-file");
 
 function func(gif) {
     fetch(gif).then(gifed => {
-        const file = fs.createWriteStream("./cached-gif/" + Math.floor(Math.random() * 100000) + ".gif");
-        http.get(gifed.url, response => {
-            response.pipe(file);
-        });
+        dl(gifed.url, { directory: "./cached-gif/", filename: Math.floor(Math.random() * 1000) + ".gif", function(e) { if (e) console.log(e); } });
     });
 }
 
