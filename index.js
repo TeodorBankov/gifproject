@@ -5,5 +5,5 @@ const fetch_gif = require("./fetch-gif");
 let gif;
 fetch_gif(giphy).then(g => gif = g).catch(e => console.log(e));
 
-let thing = require("./code");
+let thing = require("./storegifs");
 console.log(thing);
