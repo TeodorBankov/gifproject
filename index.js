@@ -34,6 +34,9 @@ process.stdin.on("data", async chunk => {
     let args = lines[0].split(" ");
 
     if (args[0] == "exit") {
+        config.playing = false;
+        fs.writeFileSync("config.json", JSON.stringify(config));
+        cache_mng.clear();
         process.exit();
     } else if (args[0] == "config") {
         switch (args[1]) {
@@ -44,7 +47,9 @@ process.stdin.on("data", async chunk => {
             default:
                 console.log("Missing arguments");
         }
+    } else if (args[0] == "start") {
+        config.playing = true;
+        fs.writeFileSync("config.json", JSON.stringify(config));
+        main();
     }
 })
-
-main();
