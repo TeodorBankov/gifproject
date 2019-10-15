@@ -1,11 +1,12 @@
+const fs = require("fs");
+
 function get(giphy) {
     return new Promise((res, rej) => {
-        giphy.search("trippy").then(gif => {
+        fs.readFileSync("config.json");
+        giphy.search(config.search).then(gif => {
             res(gif);
         });
     });
 }
 
 module.exports = get;
-
-
