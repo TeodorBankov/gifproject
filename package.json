@@ -1,0 +1,28 @@
+{
+  "name": "gifproject",
+  "version": "1.0.0",
+  "description": "#NiGGERRRRRR",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "download-file": "^0.1.5",
+    "fs": "0.0.1-security",
+    "giphy-api": "^2.0.1",
+    "mkdir": "0.0.2",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeodorBankov/gifproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeodorBankov/gifproject/issues"
+  },
+  "homepage": "https://github.com/TeodorBankov/gifproject#readme"
+}
