@@ -4,6 +4,11 @@ const fetch_gif = require("./fetch-gif");
 const store_gif = require("./storegifs");
 const cache_mng = require("./cache-mng");
 
+const readline = require("linebyline").createInterface({
+     input: process.stdin,
+    output: process.stdout
+    });
+
 let main = async function () {
     let gif;
 
@@ -22,6 +27,10 @@ let main = async function () {
     }, 20000);
 }
 
-//TODO: needs a function update.
+let exitApp = async function () {
+   
+}
+
+//TODO: function exit
 
 main();
