@@ -61,4 +61,4 @@ typings/
 .next
 
 .vscode/
-./cached-gif/*
+cached-gif/*

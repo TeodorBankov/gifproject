@@ -4,11 +4,6 @@ const fetch_gif = require("./fetch-gif");
 const store_gif = require("./storegifs");
 const cache_mng = require("./cache-mng");
 
-const readline = require("linebyline").createInterface({
-     input: process.stdin,
-    output: process.stdout
-    });
-
 let main = async function () {
     let gif;
 
@@ -27,10 +22,14 @@ let main = async function () {
     }, 20000);
 }
 
-let exitApp = async function () {
-   
-}
+process.stdin.resume();
+process.stdin.setEncoding("utf8");
 
-//TODO: function exit
+process.stdin.on("data", async chunk => {
+    let lines = chunk.split("\n");
+    if (lines[0] == "exit") {
+        process.exit();
+    }
+})
 
 main();
