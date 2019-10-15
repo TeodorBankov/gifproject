@@ -17,7 +17,7 @@ let main = async function () {
         await fetch_gif(giphy).then(g => gif = g).catch(e => console.log(e));
         await store_gif(gif.data[Math.floor(Math.random() * gif.data.length)].images["original"].url);
           }
-    timer = 1;
+    timer = 1; 
     }
     await cache_mng.set();
     await cache_mng.clear();
