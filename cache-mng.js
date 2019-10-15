@@ -1,4 +1,5 @@
 const fs = require("fs");
+const mkdir = require("mkdirp");
 
 let exported = {
     /**
@@ -6,10 +7,13 @@ let exported = {
     * @return  Void
     */
     clear: function () {
-        fs.readdir("./cached-gif/", (e, files) => {
-            if (e) console.log(e);
+        fs.readdir(__dirname + "/cached-gif/", (e, files) => {
+            if (e) {
+                if (e.code == "ENOENT") return mkdir(__dirname + "/cached-gif/", e => {if (e) console.log(e)});
+            }
+            console.log(files)
             files.forEach((f, i) => {
-                fs.unlink("./cached-gif/" + f, e => {
+                fs.unlink(__dirname + "/cached-gif/" + f, e => {
                     if (e) console.log(e);
                 });
             });
