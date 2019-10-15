@@ -29,7 +29,8 @@ process.stdin.on("data", async chunk => {
     let lines = chunk.split("\n");
     if (lines[0] == "exit") {
         process.exit();
-    }
+    } 
 })
+
 
 main();

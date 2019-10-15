@@ -1,8 +1,11 @@
 ###rosko
 
 * [x] Fix intervals
+* [ ] Make a config file
+
 
 ###tedo
 
 * [ ] Timer function
-* [ ] Function exit
+* [x] Function exit
+* [ ] Let user choose which genre of gifs to download
