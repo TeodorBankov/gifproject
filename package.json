@@ -4,6 +4,7 @@
   "description": "#NiGGERRRRRR",
   "main": "index.js",
   "dependencies": {
+    "crypto": "^1.0.1",
     "dotenv": "^8.1.0",
     "download-file": "^0.1.5",
     "fs": "0.0.1-security",

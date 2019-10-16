@@ -2,7 +2,8 @@ const fs = require("fs");
 
 function get(giphy) {
     return new Promise((res, rej) => {
-        fs.readFileSync("config.json");
+        let config = fs.readFileSync("config.json");
+        config = JSON.parse(config);
         giphy.search(config.search).then(gif => {
             res(gif);
         });
