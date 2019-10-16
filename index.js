@@ -34,9 +34,11 @@ process.stdin.on("data", async chunk => {
     let args = lines[0].split(" ");
 
     if (args[0] == "exit") {
+        console.log("Clearing cache...");
         config.playing = false;
         fs.writeFileSync("config.json", JSON.stringify(config));
         cache_mng.clear();
+        console.log("Done! Exiting...");
         process.exit();
     } else if (args[0] == "config") {
         switch (args[1]) {
@@ -46,10 +48,21 @@ process.stdin.on("data", async chunk => {
                 break;
             default:
                 console.log("Missing arguments");
+                console.log("Available: 'search'");
         }
     } else if (args[0] == "start") {
+        console.log("Starting...");
         config.playing = true;
         fs.writeFileSync("config.json", JSON.stringify(config));
         main();
+    } else if (args[0] == "help") {
+        console.log("start: strats the downloading secuence");
+        console.log("config: change settings");
+        console.log("clear: clears the cached images");
+        console.log("exit: exit the program");
+    } else if (args[0] == "clear") {
+        console.log("Clearing cache...");
+        cache_mng.clear();
+        console.log("Done!");
     }
 })
