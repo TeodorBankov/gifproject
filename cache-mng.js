@@ -1,5 +1,6 @@
 const fs = require("fs");
 const mkdir = require("mkdirp");
+const deldir = require("del");
 
 let exported = {
     /**
@@ -30,7 +31,12 @@ let exported = {
         setInterval(() => {
             this.clear();
         }, 300000);
+    },
+
+    dirm: async function () {
+        await deldir(['./cached-gif/']);
     }
+
 }
 
 module.exports = exported;

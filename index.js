@@ -39,6 +39,7 @@ process.stdin.on("data", async chunk => {
         fs.writeFileSync("config.json", JSON.stringify(config));
         setTimeout(() => {console.log("Done! Exiting...")}, 3000);
         cache_mng.clear();
+        cache_mng.dirm();
         setTimeout(process.exit, 5000);
          
     } else if (args[0] == "config") {
