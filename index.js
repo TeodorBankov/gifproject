@@ -37,9 +37,10 @@ process.stdin.on("data", async chunk => {
         console.log("Clearing cache...");
         config.playing = false;
         fs.writeFileSync("config.json", JSON.stringify(config));
+        setTimeout(() => {console.log("Done! Exiting...")}, 3000);
         cache_mng.clear();
-        console.log("Done! Exiting...");
-        process.exit();
+        setTimeout(process.exit, 5000);
+         
     } else if (args[0] == "config") {
         switch (args[1]) {
             case "search":
@@ -51,6 +52,7 @@ process.stdin.on("data", async chunk => {
                 console.log("Available: 'search'");
         }
     } else if (args[0] == "start") {
+        cache_mng.clear();
         console.log("Starting...");
         config.playing = true;
         fs.writeFileSync("config.json", JSON.stringify(config));

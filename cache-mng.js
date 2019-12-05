@@ -7,16 +7,19 @@ let exported = {
     * @return  Void
     */
     clear: function () {
-        fs.readdir(__dirname + "/cached-gif/", (e, files) => {
-            if (e) {
-                if (e.code == "ENOENT") return mkdir(__dirname + "/cached-gif/", e => {if (e) console.log(e)});
-            }
-            console.log(files)
-            files.forEach((f, i) => {
-                fs.unlink(__dirname + "/cached-gif/" + f, e => {
-                    if (e) console.log(e);
+        return new Promise((res, rej) => {
+            fs.readdir(__dirname + "/cached-gif/", (e, files) => {
+                if (e) {
+                    if (e.code == "ENOENT") return mkdir(__dirname + "/cached-gif/", e => {if (e) console.log(e)});
+                }
+                console.log(files)
+                files.forEach((f, i) => {
+                    fs.unlink(__dirname + "/cached-gif/" + f, e => {
+                        if (e) console.log(e);
+                    });
                 });
             });
+            res("OK");
         });
     },
     /**

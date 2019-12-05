@@ -9,7 +9,7 @@
     "download-file": "^0.1.5",
     "fs": "0.0.1-security",
     "giphy-api": "^2.0.1",
-    "mkdir": "0.0.2",
+    "mkdirp": "^0.5.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {},
