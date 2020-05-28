@@ -10,10 +10,6 @@ if (args.length < 2) {
 	process.exit(0);
 }
 
-getBPM('./cached-songs/R9eC3WBRKeY.flac').then((data) => {
-	console.log(data);
-});
-
 async function getVideo() {
 	const ytdl = require('ytdl-core');
 	return new Promise((res, rej) => {
@@ -76,7 +72,7 @@ playMusic()
 		app.set('view engine', 'handlebars');
 
 		app.get('/', (req, res) => {
-			res.render('gifs');
+			res.render('gif');
 		});
 
 		app.listen(port);

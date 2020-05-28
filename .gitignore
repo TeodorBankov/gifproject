@@ -1,0 +1,6 @@
+cached-gifs/
+cached-songs/
+node_modules/
+*.env
+package-lock.json
+
