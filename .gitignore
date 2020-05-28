@@ -3,4 +3,4 @@ cached-songs/
 node_modules/
 *.env
 package-lock.json
-
+.gitignore
