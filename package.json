@@ -1,0 +1,25 @@
+{
+	"name": "gif-project",
+	"version": "1.0.0",
+	"description": "The gif project [REVAMP]",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Dolan Bright",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"download-file": "^0.1.5",
+		"express": "^4.17.1",
+		"express-handlebars": "^4.0.4",
+		"get-audio-duration": "^1.0.0",
+		"giphy-api": "^2.0.1",
+		"music-tempo": "^1.0.3",
+		"opn": "^6.0.0",
+		"rimraf": "^3.0.2",
+		"sound-play": "^1.0.5",
+		"web-audio-api": "^0.2.2",
+		"ytdl-core": "^2.1.2"
+	}
+}
