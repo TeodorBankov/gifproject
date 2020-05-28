@@ -1,4 +1,0 @@
-# gifproject
-
-## Usage
-No usage
