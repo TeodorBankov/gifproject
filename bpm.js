@@ -4,6 +4,7 @@ var fs = require("fs");
 let bpms = 0;
 
 var calcTempo = async function (buffer) {
+  try{
   var audioData = [];
   // Take the average of the two channels
   if (buffer.numberOfChannels == 2) {
@@ -23,12 +24,14 @@ var calcTempo = async function (buffer) {
       return mt.tempo;
     }
     bpms = returnVal();
+  }catch(e) {
+    console.log(e);
+  }
 }
  
 var data = fs.readFileSync("./cached-songs/czTksCF6X8Y.flac");
  
 var context = new AudioContext();
 context.decodeAudioData(data, calcTempo);
-setTimeout(function() {
-  console.log("AND IT HAS WORKED "+bpms);
-}, 4000);
+
+ module.exports = setTimeout(async function() { bpms }, 10);

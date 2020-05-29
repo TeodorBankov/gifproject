@@ -5,6 +5,8 @@ const opn = require('opn');
 const port = process.env.PORT || 6969;
 const path = require('path');
 const getTempo = require('./bpm');
+let tempo = getTempo.bpms;
+
 
 if (args.length < 2) {
 	console.log('Correct syntax: node main.js <gif> <link to youtube>');
