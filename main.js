@@ -14,7 +14,7 @@ if (args.length < 2) {
 async function getVideo() {
 	const ytdl = require('ytdl-core');
 	return new Promise((res, rej) => {
-		const id = `cached-songs/${ytdl.getVideoID(args[1])}.wav`;
+		const id = `cached-songs/${ytdl.getVideoID(args[1])}.flac`;
 		function fetchVideo() {
 			ytdl(args[1]).pipe(
 				fs.createWriteStream(id).on('close', () => {
