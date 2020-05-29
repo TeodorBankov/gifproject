@@ -4,6 +4,7 @@ const args = process.argv.slice(2);
 const opn = require('opn');
 const port = process.env.PORT || 6969;
 const path = require('path');
+const getTempo = require('./bpm');
 
 if (args.length < 2) {
 	console.log('Correct syntax: node main.js <gif> <link to youtube>');
@@ -45,16 +46,15 @@ async function playMusic() {
 		const fullDir = path.join(__dirname, dir);
 		const duration = (await gad.getAudioDurationInSeconds(dir)) + 1;
 		console.log(`Song duration is ~${Math.round(duration)}s`);
-		setTimeout(() => {
-			console.log('Song finished! Clearing cache...');
-			rimraf('cached-gifs', () => {
-				rimraf('cached-songs', () => {
-					console.log('Cache cleared!');
-				});
-			});
-		}, duration * 1000);
-		await sound.play(fullDir);
 		initServer();
+		console.log(getTempo(fullDir));
+		await sound.play(fullDir);
+		console.log('Song finished! Clearing cache...');
+		rimraf('cached-gifs', () => {
+			rimraf('cached-songs', () => {
+				console.log('Cache cleared!');
+			});
+		});
 	} catch (e) {
 		console.log(e);
 		process.exit(0);
@@ -62,6 +62,7 @@ async function playMusic() {
 }
 
 async function initServer() {
+	console.log('init nigga');
 	const express = require('express');
 	const exphbs = require('express-handlebars');
 
@@ -72,14 +73,14 @@ async function initServer() {
 
 	app.get('/', (req, res) => {
 		res.render('gif', {
-			src: path.join(__dirname, gifArr[0])
+			src: gifArr[0]
 		});
 	});
 
 	app.listen(port);
-	opn(`localhost:${port}`);
+	opn(`http://localhost:${port}/`);
 }
 
-gifArr = getGif(args, 1);
+gifArr = getGif(args, 3);
 
 playMusic();
