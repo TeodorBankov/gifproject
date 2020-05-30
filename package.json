@@ -4,7 +4,7 @@
 	"description": "Gif nibba",
 	"main": "main.js",
 	"scripts": {
-		"start": "node main.js"
+		"start": "nodemon main.js"
 	},
 	"repository": {
 		"type": "git",
