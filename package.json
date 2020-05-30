@@ -1,0 +1,22 @@
+{
+	"name": "gifproject-revamp",
+	"version": "2.0.0",
+	"description": "Gif nibba",
+	"main": "main.js",
+	"scripts": {
+		"start": "node main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TeodorBankov/gifproject.git"
+	},
+	"author": "iHackUtil",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/TeodorBankov/gifproject/issues"
+	},
+	"homepage": "https://github.com/TeodorBankov/gifproject#readme",
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	}
+}
