@@ -11,7 +11,7 @@
     "fs": "0.0.1-security",
     "giphy-api": "^2.0.1",
     "mkdirp": "^0.5.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {},
   "scripts": {
